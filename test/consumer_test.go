@@ -19,12 +19,12 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/Shopify/sarama"
-	"github.com/Shopify/sarama/mocks"
+	"github.com/IBM/sarama"
+	"github.com/IBM/sarama/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama" //nolint:staticcheck // This is deprecated and will be removed in the next release.
+	"github.com/dnwe/otelsarama"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/propagation"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"

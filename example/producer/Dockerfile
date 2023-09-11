@@ -13,7 +13,7 @@
 # limitations under the License.
 FROM golang:alpine AS base
 COPY . /src/
-WORKDIR /src/instrumentation/github.com/Shopify/sarama/otelsarama/example
+WORKDIR /src/instrumentation/github.com/IBM/sarama/otelsarama/example
 
 FROM base AS kafka-producer
 RUN go install ./producer/producer.go

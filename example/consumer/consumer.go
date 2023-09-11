@@ -24,19 +24,17 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Shopify/sarama"
+	"github.com/IBM/sarama"
 
 	"go.opentelemetry.io/otel"
 	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
 	"go.opentelemetry.io/otel/trace"
 
-	"go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama" //nolint:staticcheck // This is deprecated and will be removed in the next release.
-	"go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama/example"
+	"github.com/dnwe/otelsarama"
+	"github.com/dnwe/otelsarama/example"
 )
 
-var (
-	brokers = flag.String("brokers", os.Getenv("KAFKA_PEERS"), "The Kafka brokers to connect to, as a comma separated list")
-)
+var brokers = flag.String("brokers", os.Getenv("KAFKA_PEERS"), "The Kafka brokers to connect to, as a comma separated list")
 
 func main() {
 	tp, err := example.InitTracer()
@@ -106,8 +104,7 @@ func printMessage(msg *sarama.ConsumerMessage) {
 }
 
 // Consumer represents a Sarama consumer group consumer.
-type Consumer struct {
-}
+type Consumer struct{}
 
 // Setup is run at the beginning of a new session, before ConsumeClaim.
 func (consumer *Consumer) Setup(sarama.ConsumerGroupSession) error {
@@ -124,7 +121,7 @@ func (consumer *Consumer) ConsumeClaim(session sarama.ConsumerGroupSession, clai
 	// NOTE:
 	// Do not move the code below to a goroutine.
 	// The `ConsumeClaim` itself is called within a goroutine, see:
-	// https://github.com/Shopify/sarama/blob/master/consumer_group.go#L27-L29
+	// https://github.com/IBM/sarama/blob/master/consumer_group.go#L27-L29
 	for message := range claim.Messages() {
 		printMessage(message)
 		session.MarkMessage(message, "")

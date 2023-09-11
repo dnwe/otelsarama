@@ -1,11 +1,11 @@
-module go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama/test
+module go.opentelemetry.io/contrib/instrumentation/github.com/IBM/sarama/otelsarama/test
 
 go 1.19
 
 require (
-	github.com/Shopify/sarama v1.38.1
+	github.com/IBM/sarama v1.38.1
 	github.com/stretchr/testify v1.8.4
-	go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama v0.43.0
+	go.opentelemetry.io/contrib/instrumentation/github.com/IBM/sarama/otelsarama v0.43.0
 	go.opentelemetry.io/otel v1.17.0
 	go.opentelemetry.io/otel/sdk v1.17.0
 	go.opentelemetry.io/otel/trace v1.17.0
@@ -38,4 +38,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama => ../
+replace go.opentelemetry.io/contrib/instrumentation/github.com/IBM/sarama/otelsarama => ../

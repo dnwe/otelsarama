@@ -21,12 +21,12 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/Shopify/sarama"
-	"github.com/Shopify/sarama/mocks"
+	"github.com/IBM/sarama"
+	"github.com/IBM/sarama/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama" //nolint:staticcheck // This is deprecated and will be removed in the next release.
+	"github.com/dnwe/otelsarama"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/propagation"
@@ -89,8 +89,8 @@ func TestWrapSyncProducer(t *testing.T) {
 				semconv.MessagingDestinationKindTopic,
 				semconv.MessagingDestinationName(topic),
 				// TODO: The mock sync producer of sarama does not handle the offset while sending messages
-				// https://github.com/Shopify/sarama/pull/1747
-				//semconv.MessagingMessageID("3"),
+				// https://github.com/IBM/sarama/pull/1747
+				// semconv.MessagingMessageID("3"),
 				semconv.MessagingKafkaDestinationPartition(12),
 			},
 			kind: oteltrace.SpanKindProducer,
@@ -100,7 +100,7 @@ func TestWrapSyncProducer(t *testing.T) {
 				semconv.MessagingSystem("kafka"),
 				semconv.MessagingDestinationKindTopic,
 				semconv.MessagingDestinationName(topic),
-				//semconv.MessagingMessageID("4"),
+				// semconv.MessagingMessageID("4"),
 				semconv.MessagingKafkaDestinationPartition(25),
 			},
 			kind: oteltrace.SpanKindProducer,

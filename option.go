@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otelsarama // import "go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama"
+package otelsarama
 
 import (
 	"go.opentelemetry.io/otel"
@@ -20,7 +20,7 @@ import (
 	"go.opentelemetry.io/otel/trace"
 )
 
-const defaultTracerName = "go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama"
+const defaultTracerName = "go.opentelemetry.io/contrib/instrumentation/github.com/IBM/sarama/otelsarama"
 
 type config struct {
 	TracerProvider trace.TracerProvider

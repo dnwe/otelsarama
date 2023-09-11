@@ -12,15 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package otelsarama instruments the github.com/Shopify/sarama package.
+// Package otelsarama instruments the github.com/IBM/sarama package.
 //
 // The consumer's span will be created as a child of the producer's span.
 //
 // Context propagation only works on Kafka versions higher than 0.11.0.0 which supports record headers.
 // (https://archive.apache.org/dist/kafka/0.11.0.0/RELEASE_NOTES.html)
 //
-// Based on: https://github.com/DataDog/dd-trace-go/tree/v1/contrib/Shopify/sarama
-//
-// Deprecated: This module is no longer supported.
-// github.com/Shopify/sarama moved to github.com/IBM/sarama.
-package otelsarama // import "go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama"
+// Based on: https://github.com/DataDog/dd-trace-go/tree/main/contrib/IBM/sarama.v1
+package otelsarama

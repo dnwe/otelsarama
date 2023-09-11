@@ -24,18 +24,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Shopify/sarama"
+	"github.com/IBM/sarama"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/codes"
 
-	"go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama" //nolint:staticcheck // This is deprecated and will be removed in the next release.
-	"go.opentelemetry.io/contrib/instrumentation/github.com/Shopify/sarama/otelsarama/example"
+	"github.com/dnwe/otelsarama"
+	"github.com/dnwe/otelsarama/example"
 )
 
-var (
-	brokers = flag.String("brokers", os.Getenv("KAFKA_PEERS"), "The Kafka brokers to connect to, as a comma separated list")
-)
+var brokers = flag.String("brokers", os.Getenv("KAFKA_PEERS"), "The Kafka brokers to connect to, as a comma separated list")
 
 func main() {
 	tp, err := example.InitTracer()
