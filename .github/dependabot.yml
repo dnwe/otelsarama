@@ -25,6 +25,9 @@ updates:
       golang-org-x:
         patterns:
           - "golang.org/x/*"
+      otel:
+        patterns:
+          - "go.opentelemetry.io/*"
   - package-ecosystem: gomod
     directory: /example
     open-pull-requests-limit: 5
@@ -40,6 +43,9 @@ updates:
       golang-org-x:
         patterns:
           - "golang.org/x/*"
+      otel:
+        patterns:
+          - "go.opentelemetry.io/*"
   - package-ecosystem: gomod
     directory: /test
     open-pull-requests-limit: 5
@@ -55,6 +61,9 @@ updates:
       golang-org-x:
         patterns:
           - "golang.org/x/*"
+      otel:
+        patterns:
+          - "go.opentelemetry.io/*"
   - package-ecosystem: docker
     directory: /example/consumer
     open-pull-requests-limit: 5
@@ -70,6 +79,9 @@ updates:
       golang-org-x:
         patterns:
           - "golang.org/x/*"
+      otel:
+        patterns:
+          - "go.opentelemetry.io/*"
   - package-ecosystem: docker
     directory: /example/producer
     open-pull-requests-limit: 5
@@ -85,3 +97,6 @@ updates:
       golang-org-x:
         patterns:
           - "golang.org/x/*"
+      otel:
+        patterns:
+          - "go.opentelemetry.io/*"
