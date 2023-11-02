@@ -3,7 +3,7 @@ module github.com/dnwe/otelsarama
 go 1.19
 
 require (
-	github.com/IBM/sarama v1.41.2
+	github.com/IBM/sarama v1.42.0
 	github.com/stretchr/testify v1.8.4
 	go.opentelemetry.io/otel v1.19.0
 	go.opentelemetry.io/otel/trace v1.19.0
