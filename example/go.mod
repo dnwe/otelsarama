@@ -3,7 +3,7 @@ module github.com/dnwe/otelsarama/example
 go 1.18
 
 require (
-	github.com/IBM/sarama v1.41.2
+	github.com/IBM/sarama v1.42.1
 	github.com/dnwe/otelsarama v0.0.0-00010101000000-000000000000
 	go.opentelemetry.io/otel v1.19.0
 	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.19.0
